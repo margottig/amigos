@@ -1,4 +1,5 @@
 # importar la función que devolverá una instancia de una conexión
+from unittest import result
 from amigos.config.mysqlconnection import connectToMySQL
 # modelar la clase después de la tabla friend de nuestra base de datos
 
@@ -28,3 +29,10 @@ class Amigos:
     def insertar_amigos(cls, data):
         consulta = "INSERT INTO......."
         resultados = connectToMySQL('amigos_db').query_db(consulta, data)
+    
+    @classmethod
+    def get_un_amigo(cls, data):
+        consulta = "SELECT * FROM amigos WHERE id=%(identificador)s;"
+        resultados = connectToMySQL('amigos_db').query_db(consulta, data )
+        return resultados
+

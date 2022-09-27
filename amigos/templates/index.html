@@ -8,5 +8,16 @@
 </head>
 <body>
     <h1>Bienvenid@ a FRIENDS</h1>
+    <h2>Todos mis amigos</h2>
+    {% for un_amigo in todos_amigos %}
+        <p>First Name: {{un_amigo.nombre}}</p>
+        <p>Last Name: {{un_amigo.apellido}}</p>
+        <p>Occupation: {{un_amigo.ocupacion}}</p>
+        <hr>
+    {% endfor %}
+
+
+
+
 </body>
 </html>
